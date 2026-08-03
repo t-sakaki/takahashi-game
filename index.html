@@ -9,54 +9,64 @@
 <body>
 <div id="app">
 
-<div id="menu">
-  <div style="text-align:center;margin-bottom:24px;">
-    <h1>高橋是清 〜日本のケインズ〜</h1>
-    <p>経済と政治を学び、現代につなげる5つの体験</p>
+<header>
+  <h1>高橋是清 〜日本のケインズ〜</h1>
+  <p>経済と政治を学び、現代につなげる5つの体験</p>
+  <div id="lang-switch" style="margin:10px 0;">
+    <label for="lang-select" class="visually-hidden">Language / 言語</label>
+    <select id="lang-select" aria-label="Language selection">
+      <option value="ja">日本語</option>
+      <option value="en">English</option>
+    </select>
   </div>
+</header>
+
+<nav id="menu" aria-label="ゲーム選択メニュー">
   <div style="display:flex;flex-direction:column;gap:12px;">
-    <button class="card" onclick="startGame(1)">
+    <button class="card" onclick="startGame(1)" aria-label="高橋財政 〜円の支配者〜: 景気、軍部、財政のバランスを取るターンベースシミュレーション">
       <div style="font-weight:500;margin-bottom:4px;">① 高橋財政 〜円の支配者〜</div>
       <div style="font-size:13px;color:#666;">SLG：景気、軍部、財政の三つ巴を制す</div>
     </button>
-    <button class="card" onclick="startGame(2)">
+    <button class="card" onclick="startGame(2)" aria-label="二・二六 4:40AM: 青年将校の襲撃から高橋是清が生き延びるか、歴史を変えるかを体験するサバイバルアドベンチャー">
       <div style="font-weight:500;margin-bottom:4px;">② 二・二六 4:40AM</div>
       <div style="font-size:13px;color:#666;">サバイバル：将棋のように読み、命を繋ぐ</div>
     </button>
-    <button class="card" onclick="startGame(3)">
+    <button class="card" onclick="startGame(3)" aria-label="金と円と艦と: 各時代の危機に応じて債券デッキを構築し、国家を救うデッキ構築カードゲーム">
       <div style="font-weight:500;margin-bottom:4px;">③ 金と円と艦と</div>
       <div style="font-size:13px;color:#666;">デッキ構築：債券で国家を救え</div>
     </button>
-    <button class="card" onclick="startGame(4)">
+    <button class="card" onclick="startGame(4)" aria-label="是清の相場帳: 経済探偵として相場の異常を調査し黒幕を突き止める推理アドベンチャー">
       <div style="font-weight:500;margin-bottom:4px;">④ 是清の相場帳</div>
       <div style="font-size:13px;color:#666;">推理：経済事件の黒幕を暴け</div>
     </button>
-    <button class="card" onclick="startGame(5)">
+    <button class="card" onclick="startGame(5)" aria-label="円の錬金術師: 金本位制から管理通貨制への移行を錬金の比喩で学ぶパズルリソースマネジメント">
       <div style="font-weight:500;margin-bottom:4px;">⑤ 円の錬金術師</div>
       <div style="font-size:13px;color:#666;">パズル：錬金釜で経済を動かす</div>
     </button>
   </div>
-</div>
+</nav>
 
-<div id="game1" style="display:none;">
-  <div class="flex" style="justify-content:space-between;align-items:center;margin-bottom:16px;">
-    <button class="back" onclick="backToMenu()">← メニュー</button>
+<main>
+
+<div id="game1" class="game-panel" tabindex="-1" aria-labelledby="game1-title">
+  <div class="game-header">
+    <button class="back" onclick="backToMenu()" aria-label="メニューに戻る">← メニュー</button>
     <div class="meta">ターン <span id="g1-turn">1</span>/6</div>
   </div>
-  <h2>高橋財政 〜円の支配者〜</h2>
+  <h2 id="game1-title">高橋財政 〜円の支配者〜</h2>
   <p>1931年〜1936年。大蔵大臣・高橋是清として、日本をデフレと軍部の脅威から救え。</p>
-  <div class="flex" style="margin-bottom:16px;">
-    <div class="panel" style="margin-bottom:0;">
+  <div class="stats flex" style="margin-bottom:16px;">
+    <div class="panel">
       <div style="font-size:12px;color:#888;">景気回復度</div>
       <div style="font-size:20px;font-weight:500;" id="g1-econ">50</div>
       <div class="gauge-bar"><div class="gauge-fill" id="g1-econ-bar"></div></div>
     </div>
-    <div class="panel" style="margin-bottom:0;">
+    <div class="panel">
       <div style="font-size:12px;color:#888;">陸軍好感度</div>
       <div style="font-size:20px;font-weight:500;" id="g1-army">50</div>
       <div class="gauge-bar"><div class="gauge-fill" id="g1-army-bar"></div></div>
     </div>
-    <div class="panel" style="margin-bottom:0;">
+    <div class="panel">
       <div style="font-size:12px;color:#888;">財政健全度</div>
       <div style="font-size:20px;font-weight:500;" id="g1-fiscal">50</div>
       <div class="gauge-bar"><div class="gauge-fill" id="g1-fiscal-bar"></div></div>
@@ -71,27 +81,27 @@
       <div style="font-weight:500;margin-bottom:4px;">現代へのレッスン</div>
       <p style="margin:0;">高橋財政は「景気刺激のための大胆な財政支出」と「軍事費抑制」の両立を目指した。これは現代の「MMT（現代貨幣理論）」や「アベノミクス」と共通する。ただし、軍部（今でいう「安全保障至上主義」）とのバランスを取ることの難しさは、現代の「財政出動 vs 防衛費増大」の議論と重なる。</p>
     </div>
-    <button class="back" onclick="backToMenu()">メニューへ</button>
+    <button class="back" onclick="backToMenu()" aria-label="メニューに戻る">メニューへ</button>
   </div>
 </div>
 
-<div id="game2" style="display:none;">
-  <div class="flex" style="justify-content:space-between;align-items:center;margin-bottom:16px;">
-    <button class="back" onclick="backToMenu()">← メニュー</button>
+<div id="game2" class="game-panel" tabindex="-1" aria-labelledby="game2-title">
+  <div class="game-header">
+    <button class="back" onclick="backToMenu()" aria-label="メニューに戻る">← メニュー</button>
     <div class="meta">時刻 <span id="g2-time">4:30</span></div>
   </div>
-  <h2>二・二六 4:40AM</h2>
+  <h2 id="game2-title">二・二六 4:40AM</h2>
   <p>1936年2月26日。官邸に乱入した青年将校たちから、78歳の高橋是清はどう生き延びるか。</p>
-  <div class="flex" style="margin-bottom:16px;">
-    <div class="panel" style="margin-bottom:0;">
+  <div class="stats flex" style="margin-bottom:16px;">
+    <div class="panel">
       <div style="font-size:12px;color:#888;">将校の狂気</div>
       <div style="font-size:20px;font-weight:500;" id="g2-mad">30</div>
     </div>
-    <div class="panel" style="margin-bottom:0;">
+    <div class="panel">
       <div style="font-size:12px;color:#888;">将校の動揺</div>
       <div style="font-size:20px;font-weight:500;" id="g2-shake">20</div>
     </div>
-    <div class="panel" style="margin-bottom:0;">
+    <div class="panel">
       <div style="font-size:12px;color:#888;">説得の糸口</div>
       <div style="font-size:20px;font-weight:500;" id="g2-hope">10</div>
     </div>
@@ -105,27 +115,27 @@
       <div style="font-weight:500;margin-bottom:4px;">現代へのレッスン</div>
       <p style="margin:0;">高橋是清の暗殺は「軍部の政治介入」という構造的問題の帰結だった。個人の知略だけでは構造的暴力を防ぎきれない。現代の「民主主義と安全保障の緊張関係」「SNSによる情報戦と世論操作」も、同じく「個人の理性だけでは制御しきれない構造的力」として存在する。</p>
     </div>
-    <button class="back" onclick="backToMenu()">メニューへ</button>
+    <button class="back" onclick="backToMenu()" aria-label="メニューに戻る">メニューへ</button>
   </div>
 </div>
 
-<div id="game3" style="display:none;">
-  <div class="flex" style="justify-content:space-between;align-items:center;margin-bottom:16px;">
-    <button class="back" onclick="backToMenu()">← メニュー</button>
+<div id="game3" class="game-panel" tabindex="-1" aria-labelledby="game3-title">
+  <div class="game-header">
+    <button class="back" onclick="backToMenu()" aria-label="メニューに戻る">← メニュー</button>
     <div class="meta">ラウンド <span id="g3-round">1</span>/5</div>
   </div>
-  <h2>金と円と艦と</h2>
+  <h2 id="game3-title">金と円と艦と</h2>
   <p>時代の危機に合わせてデッキを構築し、国家を救え。1931年には「金輸出禁止」でメタが変わる。</p>
-  <div class="flex" style="margin-bottom:16px;">
-    <div class="panel" style="margin-bottom:0;">
+  <div class="stats flex" style="margin-bottom:16px;">
+    <div class="panel">
       <div style="font-size:12px;color:#888;">資金</div>
       <div style="font-size:20px;font-weight:500;" id="g3-money">0</div>
     </div>
-    <div class="panel" style="margin-bottom:0;">
+    <div class="panel">
       <div style="font-size:12px;color:#888;">目標</div>
       <div style="font-size:20px;font-weight:500;" id="g3-target">30</div>
     </div>
-    <div class="panel" style="margin-bottom:0;">
+    <div class="panel">
       <div style="font-size:12px;color:#888;">金保有量</div>
       <div style="font-size:20px;font-weight:500;" id="g3-gold">3</div>
     </div>
@@ -137,18 +147,18 @@
     <p id="g3-result-text" style="margin-bottom:12px;"></p>
     <div class="muted" style="margin-bottom:12px;">
       <div style="font-weight:500;margin-bottom:4px;">現代へのレッスン</div>
-      <p style="margin:0;">高橋が行った「金本位制から管理通貨制への移行」は、通貨の「錨」を外し、政策自由度を広げ度。現代の「金融緩和」「量的に拡げた決断だった。現代の「金融緩和」「量的緩和」も同じ構造——中央銀行が「金」や「物価安定」という制約を相対化し、政策空間を拡大している。ただし、その自由度は「信用」という新たな制約に置き換わる。</p>
+      <p style="margin:0;">高橋が行った「金本位制から管理通貨制への移行」は、通貨の「錨」を外し、政策自由度を広げる決断だった。現代の「金融緩和」「量的緩和」も同じ構造——中央銀行が「金」や「物価安定」という制約を相対化し、政策空間を拡大している。ただし、その自由度は「信用」という新たな制約に置き換わる。</p>
     </div>
-    <button class="back" onclick="backToMenu()">メニューへ</button>
+    <button class="back" onclick="backToMenu()" aria-label="メニューに戻る">メニューへ</button>
   </div>
 </div>
 
-<div id="game4" style="display:none;">
-  <div class="flex" style="justify-content:space-between;align-items:center;margin-bottom:16px;">
-    <button class="back" onclick="backToMenu()">← メニュー</button>
+<div id="game4" class="game-panel" tabindex="-1" aria-labelledby="game4-title">
+  <div class="game-header">
+    <button class="back" onclick="backToMenu()" aria-label="メニューに戻る">← メニュー</button>
     <div class="meta">事件 <span id="g4-scene">1</span>/4</div>
   </div>
-  <h2>是清の相場帳</h2>
+  <h2 id="game4-title">是清の相場帳</h2>
   <p>経済探偵・高橋是清として、相場の異常変動から黒幕を推理せよ。</p>
   <div id="g4-text" class="panel" style="font-size:14px;line-height:1.6;"></div>
   <div id="g4-clues" class="muted" style="margin-bottom:16px;"></div>
@@ -160,29 +170,29 @@
       <div style="font-weight:500;margin-bottom:4px;">現代へのレッスン</div>
       <p style="margin:0;">高橋は「相場の異常変動は必ず誰かの利益になっている」という視点を持っていた。現代の「インサイダー取引」「暗号資産の市場操作」「SNSでの情報操作」も同じ構造——「誰が、いつ、どう利益を得るか」を追う目こそが、デジタル時代の「相場帳」となる。</p>
     </div>
-    <button class="back" onclick="backToMenu()">メニューへ</button>
+    <button class="back" onclick="backToMenu()" aria-label="メニューに戻る">メニューへ</button>
   </div>
 </div>
 
-<div id="game5" style="display:none;">
-  <div class="flex" style="justify-content:space-between;align-items:center;margin-bottom:16px;">
-    <button class="back" onclick="backToMenu()">← メニュー</button>
+<div id="game5" class="game-panel" tabindex="-1" aria-labelledby="game5-title">
+  <div class="game-header">
+    <button class="back" onclick="backToMenu()" aria-label="メニューに戻る">← メニュー</button>
     <div class="meta">ターン <span id="g5-turn">1</span>/5</div>
   </div>
-  <h2>円の錬金術師</h2>
+  <h2 id="game5-title">円の錬金術師</h2>
   <p>錬金釜に素材を投入し、国家の繁栄を生み出せ。制度変更でルールが変わる。</p>
-  <div class="flex" style="margin-bottom:16px;">
-    <div class="panel" style="margin-bottom:0;">
+  <div class="stats flex" style="margin-bottom:16px;">
+    <div class="panel">
       <div style="font-size:12px;color:#888;">国民の期待（需要）</div>
       <div style="font-size:20px;font-weight:500;" id="g5-demand">50</div>
       <div class="gauge-bar"><div class="gauge-fill" id="g5-demand-bar"></div></div>
     </div>
-    <div class="panel" style="margin-bottom:0;">
+    <div class="panel">
       <div style="font-size:12px;color:#888;">生産能力（供給）</div>
       <div style="font-size:20px;font-weight:500;" id="g5-supply">50</div>
       <div class="gauge-bar"><div class="gauge-fill" id="g5-supply-bar"></div></div>
     </div>
-    <div class="panel" style="margin-bottom:0;">
+    <div class="panel">
       <div style="font-size:12px;color:#888;">物価安定</div>
       <div style="font-size:20px;font-weight:500;" id="g5-price">50</div>
       <div class="gauge-bar"><div class="gauge-fill" id="g5-price-bar"></div></div>
@@ -198,11 +208,15 @@
       <div style="font-weight:500;margin-bottom:4px;">現代へのレッスン</div>
       <p style="margin:0;">「金本位制」は「金がないと政策が動かない」という硬い制約だった。高橋が切り替えた「管理通貨制」は、制約を「信用」に置き換えた。現代の「インフレ目標制」「平均物価目標制」も同じ——中央銀行の「約束」（信用）が通貨の新たな錨となる。ただし、約束を破れば信用が失われ、制約はもっと厳しいものに戻る。</p>
     </div>
-    <button class="back" onclick="backToMenu()">メニューへ</button>
+    <button class="back" onclick="backToMenu()" aria-label="メニューに戻る">メニューへ</button>
   </div>
 </div>
 
-</div>
+</main>
+
+<footer style="text-align:center;margin-top:24px;font-size:12px;color:#666;">
+  <p>© 2026 高橋是清ゲームプロジェクト. This game is licensed under <a href="LICENSE" style="color:#666;text-decoration:underline;">CC0 1.0 Universal</a>.</p>
+</footer>
 
 <script src="js/main.js" type="module"></script>
 <script src="js/game1.js" type="module"></script>
@@ -210,5 +224,15 @@
 <script src="js/game3.js" type="module"></script>
 <script src="js/game4.js" type="module"></script>
 <script src="js/game5.js" type="module"></script>
+<script>
+  // Simple language switch placeholder
+  const select = document.getElementById('lang-select');
+  select.addEventListener('change', (e) => {
+    const lang = e.target.value;
+    document.documentElement.lang = lang;
+    // TODO: implement actual translation
+    alert(`Language switched to ${lang}. (Translation not implemented yet)`);
+  });
+</script>
 </body>
 </html>
