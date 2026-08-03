@@ -4,31 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>高橋是清 〜日本のケインズ〜</title>
-<style>
-  *{box-sizing:border-box;margin:0;padding:0;}
-  body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;background:#f5f5f5;color:#111;padding:16px;line-height:1.5;}
-  #app{max-width:720px;margin:0 auto;}
-  button{font-family:inherit;transition:background 0.15s ease;}
-  button:hover{background:#f0f0f0;}
-  .gauge-bar{height:4px;background:#e0e0e0;border-radius:2px;margin-top:4px;}
-  .gauge-fill{height:100%;border-radius:2px;transition:width 0.3s;}
-  .card{padding:12px 16px;border:1px solid #ddd;border-radius:10px;background:#fff;cursor:pointer;text-align:left;font-size:14px;}
-  .card:hover{background:#f8f8f8;}
-  .panel{padding:16px;border:1px solid #ddd;border-radius:10px;background:#fff;margin-bottom:16px;}
-  .muted{padding:12px;border-radius:8px;background:#f0f0f0;font-size:13px;color:#555;}
-  h1{font-size:20px;font-weight:500;margin-bottom:8px;}
-  h2{font-size:18px;font-weight:500;margin:0 0 12px;}
-  h3{font-size:16px;font-weight:500;margin:0 0 8px;}
-  p{font-size:14px;color:#555;margin:0 0 16px;}
-  .flex{display:flex;gap:8px;}
-  .flex>div{flex:1;}
-  .grid{display:flex;flex-wrap:wrap;gap:10px;}
-  .grid>button{flex:1;min-width:120px;}
-  .back{padding:6px 12px;border:1px solid #ddd;border-radius:8px;background:#fff;cursor:pointer;font-size:13px;}
-  .meta{font-size:13px;color:#888;}
-  .notice{padding:12px;border-radius:8px;background:#f0f0f0;margin-bottom:12px;font-size:13px;color:#555;}
-  .result-box{display:none;margin-top:20px;padding:16px;border:1px solid #ddd;border-radius:10px;background:#fff;}
-</style>
+<link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 <div id="app">
@@ -73,17 +49,17 @@
     <div class="panel" style="margin-bottom:0;">
       <div style="font-size:12px;color:#888;">景気回復度</div>
       <div style="font-size:20px;font-weight:500;" id="g1-econ">50</div>
-      <div class="gauge-bar"><div class="gauge-fill" id="g1-econ-bar" style="width:50%;background:#4caf50;"></div></div>
+      <div class="gauge-bar"><div class="gauge-fill" id="g1-econ-bar"></div></div>
     </div>
     <div class="panel" style="margin-bottom:0;">
       <div style="font-size:12px;color:#888;">陸軍好感度</div>
       <div style="font-size:20px;font-weight:500;" id="g1-army">50</div>
-      <div class="gauge-bar"><div class="gauge-fill" id="g1-army-bar" style="width:50%;background:#f44336;"></div></div>
+      <div class="gauge-bar"><div class="gauge-fill" id="g1-army-bar"></div></div>
     </div>
     <div class="panel" style="margin-bottom:0;">
       <div style="font-size:12px;color:#888;">財政健全度</div>
       <div style="font-size:20px;font-weight:500;" id="g1-fiscal">50</div>
-      <div class="gauge-bar"><div class="gauge-fill" id="g1-fiscal-bar" style="width:50%;background:#2196f3;"></div></div>
+      <div class="gauge-bar"><div class="gauge-fill" id="g1-fiscal-bar"></div></div>
     </div>
   </div>
   <div id="g1-event" class="muted" style="margin-bottom:16px;"></div>
@@ -161,7 +137,7 @@
     <p id="g3-result-text" style="margin-bottom:12px;"></p>
     <div class="muted" style="margin-bottom:12px;">
       <div style="font-weight:500;margin-bottom:4px;">現代へのレッスン</div>
-      <p style="margin:0;">高橋が行った「金本位制から管理通貨制への移行」は、通貨の「錨」を外し、政策自由度を広げる決断だった。現代の「金融緩和」「量的緩和」も同じ構造——中央銀行が「金」や「物価安定」という制約を相対化し、政策空間を拡大している。ただし、その自由度は「信用」という新たな制約に置き換わる。</p>
+      <p style="margin:0;">高橋が行った「金本位制から管理通貨制への移行」は、通貨の「錨」を外し、政策自由度を広げ度。現代の「金融緩和」「量的に拡げた決断だった。現代の「金融緩和」「量的緩和」も同じ構造——中央銀行が「金」や「物価安定」という制約を相対化し、政策空間を拡大している。ただし、その自由度は「信用」という新たな制約に置き換わる。</p>
     </div>
     <button class="back" onclick="backToMenu()">メニューへ</button>
   </div>
@@ -199,17 +175,17 @@
     <div class="panel" style="margin-bottom:0;">
       <div style="font-size:12px;color:#888;">国民の期待（需要）</div>
       <div style="font-size:20px;font-weight:500;" id="g5-demand">50</div>
-      <div class="gauge-bar"><div class="gauge-fill" id="g5-demand-bar" style="width:50%;background:#2196f3;"></div></div>
+      <div class="gauge-bar"><div class="gauge-fill" id="g5-demand-bar"></div></div>
     </div>
     <div class="panel" style="margin-bottom:0;">
       <div style="font-size:12px;color:#888;">生産能力（供給）</div>
       <div style="font-size:20px;font-weight:500;" id="g5-supply">50</div>
-      <div class="gauge-bar"><div class="gauge-fill" id="g5-supply-bar" style="width:50%;background:#4caf50;"></div></div>
+      <div class="gauge-bar"><div class="gauge-fill" id="g5-supply-bar"></div></div>
     </div>
     <div class="panel" style="margin-bottom:0;">
       <div style="font-size:12px;color:#888;">物価安定</div>
       <div style="font-size:20px;font-weight:500;" id="g5-price">50</div>
-      <div class="gauge-bar"><div class="gauge-fill" id="g5-price-bar" style="width:50%;background:#f44336;"></div></div>
+      <div class="gauge-bar"><div class="gauge-fill" id="g5-price-bar"></div></div>
     </div>
   </div>
   <div id="g5-regime" class="muted" style="margin-bottom:16px;text-align:center;font-weight:500;"></div>
@@ -228,296 +204,11 @@
 
 </div>
 
-<script>
-function hideAll(){['menu','game1','game2','game3','game4','game5'].forEach(id=>document.getElementById(id).style.display='none');}
-function show(id){document.getElementById(id).style.display='block';}
-function backToMenu(){hideAll();show('menu');}
-function startGame(n){hideAll();show('game'+n);if(n===1)initG1();if(n===2)initG2();if(n===3)initG3();if(n===4)initG4();if(n===5)initG5();}
-
-/* Game 1: Turn-based SLG */
-let g1={econ:50,army:50,fiscal:50,turn:1};
-const g1events=[
-  {t:1,text:"1931年 金輸出禁止：世界大恐慌の余波で日本は金本位制を放棄。円が急落し、輸出企業は潤うが、輸入品の値上がりで国民生活は圧迫される。",choices:[
-    {label:"赤字公債を発行して公共事業を拡大（景気↑ 財政↓ 陸軍→）",e:15,a:0,f:-10},
-    {label:"軍事費を増やして陸軍をなだめる（景気→ 財政↓ 陸軍↑）",e:0,a:15,f:-10},
-    {label:"財政緊縮を宣言して信用回復を目指す（景気↓ 財政↑ 陸軍↓）",e:-10,a:-10,f:15}
-  ]},
-  {t:2,text:"1932年 五・一五事件：犬養毅首相が海軍将校に暗殺。軍部の政治介入が表面化。高橋は大蔵大臣として軍事費増額要求に直面。",choices:[
-    {label:"軍事費を抑制し、代わりに地方産業支援に回す（景気↑ 陸軍↓↓）",e:10,a:-20,f:-5},
-    {label:"満州事変の軍事費を一部認可（景気→ 陸軍↑ 財政↓）",e:0,a:10,f:-10},
-    {label:"海軍拡張案に全面協力（景気↓ 陸軍↑↑ 財政↓↓）",e:-5,a:20,f:-15}
-  ]},
-  {t:3,text:"1933年 満州国成立：国際連盟を脱退し、日本は国際的孤立へ。高橋は「軍事費を増やしても国際協調を失う」と主張するが…",choices:[
-    {label:"国際協調路線を貫き、軍事費を凍結（景気↑ 陸軍↓↓ 財政↑）",e:15,a:-25,f:10},
-    {label:"満州国承認と引き換えに軍事費増を認める（景気→ 陸軍↑ 財政↓）",e:0,a:15,f:-10},
-    {label:"満州国の経済開発に民間資金を誘導（景気↑↑ 陸軍→ 財政→）",e:20,a:0,f:0}
-  ]},
-  {t:4,text:"1934年 天羽声明：日本がアジアの安定を独力で維持すると宣言。軍部の暴走が加速。高橋は「財政規律」を旗印に軍事費抑制を図る。",choices:[
-    {label:"「財政再建10カ年計画」を掲げ、軍事費を漸減（景気→ 陸軍↓↓↓ 財政↑↑）",e:5,a:-30,f:20},
-    {label:"海軍の要求を黙認し、空軍力増強に回す（景気↓ 陸軍↑ 財政↓）",e:-5,a:10,f:-10},
-    {label:"日銀に国債引き受けを要請し、軍事費と公共投資の両立を図る（景気↑ 陸軍→ 財政↓↓）",e:15,a:0,f:-15}
-  ]},
-  {t:5,text:"1935年 軍部の不満が臨界点に。陸軍青年将校たちは「天皇を戴く革新」を叫び、政財界の重鎮への暗殺計画を立てているという噂が…",choices:[
-    {label:"私邸の警備を強化し、表立って軍部と対決（景気→ 陸軍↓↓↓）",e:0,a:-20,f:-5},
-    {label:"陸軍高官と密談し、穏健派との連携を模索（景気→ 陸軍↓）",e:0,a:-10,f:-5},
-    {label:"病床を理由に辞表を提出（景気↓ 陸軍↑ 財政→）",e:-10,a:10,f:5}
-  ]},
-  {t:6,text:"1936年 二・二六事件直前：2月25日夜。高橋は官邸に泊まることを決めた。明日、運命の日が来る。",choices:[
-    {label:"最後まで財政規律を貫く（景気→ 陸軍↓↓）",e:0,a:-15,f:10},
-    {label:"軍事費増額を密かに約束し、身の安全を図る（景気↓ 陸軍↑）",e:-5,a:15,f:-10},
-    {label:"天皇に直訴し、軍部の統制を求める（景気→ 陸軍↓↓↓）",e:0,a:-25,f:0}
-  ]}
-];
-function initG1(){g1={econ:50,army:50,fiscal:50,turn:1};document.getElementById('g1-result').style.display='none';document.getElementById('g1-event').style.display='block';renderG1();}
-function renderG1(){
-  document.getElementById('g1-turn').textContent=g1.turn;
-  setBar('g1-econ',g1.econ);setBar('g1-army',g1.army);setBar('g1-fiscal',g1.fiscal);
-  document.getElementById('g1-econ').textContent=g1.econ;
-  document.getElementById('g1-army').textContent=g1.army;
-  document.getElementById('g1-fiscal').textContent=g1.fiscal;
-  const ev=g1events[g1.turn-1];
-  document.getElementById('g1-event').textContent=ev.text;
-  const cdiv=document.getElementById('g1-choices');cdiv.innerHTML='';
-  ev.choices.forEach((c,i)=>{const btn=document.createElement('button');btn.textContent=c.label;btn.className='card';btn.onclick=()=>g1choose(i);cdiv.appendChild(btn);});
-}
-function setBar(id,val){document.getElementById(id+'-bar').style.width=Math.max(0,Math.min(100,val))+'%';}
-function g1choose(i){
-  const c=g1events[g1.turn-1].choices[i];
-  g1.econ=Math.max(0,Math.min(100,g1.econ+c.e));
-  g1.army=Math.max(0,Math.min(100,g1.army+c.a));
-  g1.fiscal=Math.max(0,Math.min(100,g1.fiscal+c.f));
-  g1.turn++;
-  if(g1.turn>6){g1end();}else{renderG1();}
-}
-function g1end(){
-  document.getElementById('g1-choices').innerHTML='';
-  document.getElementById('g1-event').style.display='none';
-  const res=document.getElementById('g1-result');res.style.display='block';
-  let txt='';
-  if(g1.army<=20){txt='【生存ルート】あなたは軍部を徹底的に抑制し、二・二六事件を回避した。しかし、陸軍内部の不満は燻り続け、別の形でのクーデターリスクは残る。高橋財政は「景気回復」を達成したが、その代償として財政赤字は累積した。';}
-  else if(g1.army<=50){txt='【葛藤ルート】あなたは軍部と一定の距離を保ちつつ、財政運営を続けた。1936年2月26日、官邸に乱入者があったが、高橋は負傷して生還。しかし、軍部の影響力は拡大し、日中戦争への道は開かれた。';}
-  else{txt='【史実ルート】あなたは軍部に対して強硬すぎた。1936年2月26日未明、青年将校たちは官邸に乱入し、78歳の高橋是清を銃剣で暗殺した。彼の遺体の傍らには、財政再建のための書類が散らばっていた。';}
-  txt+='\n\n最終スコア：景気'+g1.econ+' / 陸軍'+g1.army+' / 財政'+g1.fiscal;
-  document.getElementById('g1-result-text').textContent=txt;
-}
-
-/* Game 2: Survival Stealth */
-let g2={mad:30,shake:20,hope:10,scene:0};
-const g2scenes=[
-  {text:"4:30AM。官邸の廊下に重い足音が近づく。青年将校・安藤輝三大尉が寝室の扉を開けた。「高橋是清、覚悟はいいか。」",choices:[
-    {label:"「私は天皇陛下の忠臣だ。卿らこそ覚悟を決めよ。」（強気）",m:10,s:5,h:0},
-    {label:"「待て、話を聞かせてくれ。卿らの祖国はどこだ？」（懐柔）",m:-5,s:10,h:10},
-    {label:"「印鑑は机の引き出しにある。好きに使え。」（譲歩）",m:-10,s:15,h:-5}
-  ]},
-  {text:"安藤は一瞬動揺したが、すぐに銃口を突きつける。「財政緊縮で軍を苦しめたのはお前だ。」",choices:[
-    {label:"「緊縮ではない。日本の未来のための投資だ。」（反論）",m:15,s:0,h:5},
-    {label:"「卿らの故郷の農村は今、国債で救われている。調べてみよ。」（事実）",m:-10,s:5,h:15},
-    {label:"「軍事費を増やす約束をしよう。明日から実行する。」（約束）",m:-15,s:20,h:0}
-  ]},
-  {text:"廊下に他の将校の声がする。「安藤、時間がない。」安藤の目が血走り、銃の引き金に指をかける。",choices:[
-    {label:"「卿らの親友がこの先で死ぬぞ。私を殺せば、印らも死ぬ。」（脅し）",m:20,s:-5:h:5},
-    {label:"「天皇陛下は印らの行為を望んでおられない。」（天皇）",m:-20,s:10:h:20},
-    {label:"「私の財産はすべて印らにやる。家族を頼む。」（懇願）",m:-10,s:15:h:-10}
-  ]},
-  {text:"安藤の手が震えている。「黙れ…黙れ…」彼の精神は限界に近い。これが最後のチャンスだ。",choices:[
-    {label:"「印らは日本の誇りだ。だが、この方法では日本が滅ぶ。」（説得）",m:-15,s:10:h:20},
-    {label:"「撃て。だが、歴史は印らを『反乱軍』と記すぞ。」（覚悟）",m:25,s:-10:h:0},
-    {label:"「私もかつては印らのように国を思った。一緒に考えよう。」（共感）",m:-20,s:20:h:25}
-  ]},
-  {text:"最後の瞬間。安藤の瞳に涙が浮かぶ。「高橋…お前は…」",choices:[
-    {label:"「私は印らを恨まない。日本のために生きてくれ。」（慈悲）",m:-30,s:10:h:30},
-    {label:"「遅い。もう遅い。」（諦め）",m:10,s:10:h:-20},
-    {label:"「印らの上官はすでに鎮圧に動いている。無駄だ。」（情報）",m:15,s:-15:h:10}
-  ]}
-];
-function initG2(){g2={mad:30,shake:20,hope:10,scene:0};document.getElementById('g2-result').style.display='none';document.getElementById('g2-scene').style.display='block';document.getElementById('g2-time').textContent='4:30';renderG2();}
-function renderG2(){
-  document.getElementById('g2-mad').textContent=g2.mad;
-  document.getElementById('g2-shake').textContent=g2.shake;
-  document.getElementById('g2-hope').textContent=g2.hope;
-  const sc=g2scenes[g2.scene];
-  document.getElementById('g2-scene').textContent=sc.text;
-  const cdiv=document.getElementById('g2-choices');cdiv.innerHTML='';
-  sc.choices.forEach((c,i)=>{const btn=document.createElement('button');btn.textContent=c.label;btn.className='card';btn.onclick=()=>g2choose(i);cdiv.appendChild(btn);});
-}
-function g2choose(i){
-  const c=g2scenes[g2.scene].choices[i];
-  g2.mad=Math.max(0,g2.mad+c.m);g2.shake=Math.max(0,g2.shake+c.s);g2.hope=Math.max(0,g2.hope+c.h);
-  g2.scene++;
-  const times=['4:32','4:35','4:37','4:39','4:40'];
-  document.getElementById('g2-time').textContent=times[Math.min(g2.scene,4)];
-  if(g2.scene>=5||g2.mad>=100){g2end();}else{renderG2();}
-}
-function g2end(){
-  document.getElementById('g2-choices').innerHTML='';
-  document.getElementById('g2-scene').style.display='none';
-  const res=document.getElementById('g2-result');res.style.display='block';
-  let txt='';
-  if(g2.mad>=100){txt='【史実通り】安藤輝三の狂気が臨界点を超えた。銃声が響き、高橋是清は倒れた。彼の最期の言葉は聞き取れなかった。';}
-  else if(g2.hope>=40&&g2.mad<60){txt='【IFルート】あなたの説得が安藤の心に届いた。安藤は銃を下ろし、同僚を引き止めた。高橋は重傷を負ったが生還した。しかし、事件そのものは他の場所で発生し、日本の歴史は大きく変わった。';}
-  else if(g2.shake>=50){txt='【葛藤ルート】安藤は激しく動揺したが、最終的に命令を実行した。高橋は刺されたが、致命傷は免れた。後に「奇跡の生還」として語り継がれた。';}
-  else{txt='【史実通り】高橋は最後まで財政規律を貫いた。青年将校たちは彼を「国賊」と断じ、銃剣で突き刺した。彼の死は、軍部独裁への道を開く悲劇となった。';}
-  document.getElementById('g2-result-text').textContent=txt;
-}
-
-/* Game 3: Deck‑builder */
-let g3={money:0,target:30,gold:3,round:1,deck:[],hand:[],goldStandard:true};
-const g3eras=[
-  {name:"日清戦争（1894）",target:20,text:"戦費調達が必要。金本位制下では金保有量がないと強力なカードが使えない。"},
-  {name:"日露戦争（1904）",target:35,text:"巨額の外債発行。国際市場の信用が鍵となる。"},
-  {name:"関東大震災（1923）",target:25,text:"震災手形の処理。緊急の資金需要だが、金保有量が制約となる。"},
-  {name:"世界大恐慌（1931）",target:30,text:"金輸出禁止！金本位制が終わり、管理通貨制へ。金の制約が消え、「信用」だけでカードが使えるように。"},
-  {name:"高橋財政（1934）",target:40,text:"デフレ脱却のための大胆な財政出動。金の制約がない分、コンボが炸裂する。"}
-];
-function initG3(){g3={money:0,target:g3eras[0].target,gold:3,round:1,deck:makeDeck(),hand:[],goldStandard:true};document.getElementById('g3-result').style.display='none';drawHand();renderG3();}
-function makeDeck(){let d=[];for(let i=0;i<8;i++)d.push({type:'外債',val:5,cost:0,needGold:false,desc:'金利低いが主権リスクあり'});for(let i=0;i<6;i++)d.push({type:'内債',val:4,cost:0,needGold:false,desc:'調達力高いがインフレリスク'});for(let i=0;i<4;i++)d.push({type:'緊縮',val:-2,cost:0,needGold:false,desc:'財政健全だが景気後退'});for(let i=0;i<3;i++)d.push({type:'金本位融資',val:12,cost:0,needGold:true,desc:'金が必要な強力カード'});return shuffle(d);}
-function shuffle(a){for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]];}return a;}
-function drawHand(){g3.hand=[];for(let i=0;i<4;i++){if(g3.deck.length===0)g3.deck=shuffle(makeDeck());g3.hand.push(g3.deck.pop());}}
-function renderG3(){
-  document.getElementById('g3-round').textContent=g3.round;
-  document.getElementById('g3-money').textContent=g3.money;
-  document.getElementById('g3-target').textContent=g3.target;
-  document.getElementById('g3-gold').textContent=g3.gold;
-  const era=g3eras[g3.round-1];
-  document.getElementById('g3-era').textContent=era.name+'：'+era.text;
-  const hdiv=document.getElementById('g3-hand');hdiv.innerHTML='';
-  g3.hand.forEach((c,i)=>{
-    const disabled=(c.needGold&&g3.gold<=0&&g3.goldStandard);
-    const btn=document.createElement('button');
-    btn.style.cssText='padding:12px;border:1px solid #ddd;border-radius:10px;background:'+(disabled?'#f0f0f0':'#fff')+';cursor:'+(disabled?'not-allowed':'pointer')+';text-align:left;flex:1;min-width:120px;font-size:13px;';
-    btn.innerHTML='<div style="font-weight:500;margin-bottom:4px;">'+c.type+'</div><div style="font-size:20px;font-weight:500;margin-bottom:4px;">'+(c.val>0?'+':'')+c.val+'</div><div style="font-size:11px;color:#888;">'+c.desc+'</div>';
-    if(!disabled){btn.onclick=()=>g3play(i);}
-    hdiv.appendChild(btn);
-  });
-}
-function g3play(i){
-  const c=g3.hand[i];
-  if(c.needGold&&g3.goldStandard)g3.gold--;
-  g3.money+=c.val;g3.hand.splice(i,1);
-  if(g3.hand.length===0){
-    g3.round++;
-    if(g3.round===4){g3.goldStandard=false;g3.gold=99;}
-    if(g3.round>5){g3end();return;}
-    g3.target=g3eras[g3.round-1].target;drawHand();
-  }
-  renderG3();
-}
-function g3end(){
-  document.getElementById('g3-hand').innerHTML='';
-  const res=document.getElementById('g3-result');res.style.display='block';
-  let txt='';
-  if(g3.money>=g3eras[4].target){txt='【成功】あなたは各時代の危機を乗り越え、高橋財政を達成した。金本位制の解除がもたらした「信用の自由」は、デフレ脱却への道を開いた。最終資金：'+g3.money;}
-  else if(g3.money>=100){txt='【部分的成功】多くの危機を乗り越えたが、最後の高橋財政までの資金が不足した。しかし、金輸出禁止の効果は確かなものだった。最終資金：'+g3.money;}
-  else{txt='【失敗】金本位制の制約に縛られ、資金調達が追いつかなかった。日本はデフレのまま軍部の台頭を許すことになった。最終資金：'+g3.money;}
-  document.getElementById('g3-result-text').textContent=txt;
-}
-
-/* Game 4: Economic Detective */
-let g4={scene:0,score:0};
-const g4scenes=[
-  {text:"1920年、東京株式市場で異常な売り注文が集中している。某財閥系銀行の株が急落しているが、社内では「情報漏洩」の噂が…",clue:"相場帳：A銀行が3日前に大口の担保差し入れをしていた。差し入れ先は海外の投機家。",choices:[
-    {label:"A銀行の支店長を直撃取材する",correct:true,feed:"支店長は「上からの指示で動いた」と漏らした。上とは、陸軍の某中将だった。軍部が政財界に介入し、特定企業の弱体化を図っていた。"},
-    {label:"海外投機家の正体を調べる",correct:false,feed:"投機家は単なるフロント企業。真の黒幕は別にいる。時間を浪費した。"},
-    {label:"株価のテクニカル分析に没頭する",correct:false,feed:"チャートだけでは「誰が利益を得るか」は分からない。高橋は常に「人間の動機」を追った。"}
-  ]},
-  {text:"1923年、関東大震災直後。震災手形の処理で日銀が特殊融資を行うことになったが、融資先リストに見覚えのない名前が多数含まれている。",clue:"相場帳：融資先の半分が、震災前に設立されたばかりの「建設会社」である。資本金は極めて少ない。",choices:[
-    {label:"建設会社の代表者名簿を調べる",correct:true,feed:"代表者の多くが、政界の有力者の親族や元陸軍関係者だった。震災を「ビジネスチャンス」と捉えた輩が、国難を横取りしていた。"},
-    {label:"融資額の多い順に優先して調査する",correct:false,feed:"大金を借りた企業は表向き正当な事業者だった。小額の「建設会社」こそが、資金洗浄のフロントだった。"},
-    {label:"日銀内部の融資担当者に聞き込みする",correct:false,feed:"担当者は「上からの圧力で黙っていた」と証言。だが「上」が誰かは、口を割らなかった。"}
-  ]},
-  {text:"1927年、昭和金融恐慌。某銀行の兌換停止がきっかけで、全国に恐慌が広がっている。だが、兌換停止の「タイミング」が妙に整っている。",clue:"相場帳：兌換停止の3日前、某新聞社が「A銀行が危ない」と報じた。記者のソースは、大蔵省の匿名官僚。",choices:[
-    {label:"大蔵省の匿名官僚の正体を突き止める",correct:true,feed:"官僚は、A銀行の競合であるB銀行の元役員だった。恐慌を利用した同業者潰し——これが「経済戦」の暗部だ。"},
-    {label:"新聞社の編集局長に圧力をかける",correct:false,feed:"編集局長は「読者の知る権利」と逆ギレ。情報源を守る姿勢は見事だが、真の黒幕は別にいる。"},
-    {label:"A銀行の預金者を直接取材する",correct:false,feed:"預金者は「新聞を読んで慌てた」と語る。だが、新聞を出した「誰か」の意図を追うべきだった。"}
-  ]},
-  {text:"1931年、金輸出禁止直前。為替市場で円売りが急増しているが、売りの中心は「日本政府関係者の家族名義」の口座だという情報が…",clue:"相場帳：売り注文の多くが、ロンドンの某銀行に集中。その銀行の顧問は、元日本銀行役員。",choices:[
-    {label:"元日銀役員の現在の活動を調べる",correct:true,feed:"元役員は、金輸出禁止の情報を事前に得て、個人的に円を売っていた。国家の機密を利用した「官製インフサイダー」——これが高橋が憎んだ「経済の敵」だ。"},
-    {label:"政府関係者の資産申告を照会する",correct:false,feed:"資産申告は後付けの書類で、為替操作の証拠にはならない。動機とタイミングを追うべきだった。"},
-    {label:"ロンドンの銀行に直接照会する",correct:false,feed:"銀行側は「顧客秘密」を盾に拒否。海外の金融機関に対しては、別のルートで情報を集める必要がある。"}
-  ]}
-];
-function initG4(){g4={scene:0,score:0};document.getElementById('g4-result').style.display='none';document.getElementById('g4-clues').style.display='block';renderG4();}
-function renderG4(){
-  document.getElementById('g4-scene').textContent=g4.scene+1;
-  const sc=g4scenes[g4.scene];
-  document.getElementById('g4-text').textContent=sc.text;
-  document.getElementById('g4-clues').textContent='【手がかり】'+sc.clue;
-  const cdiv=document.getElementById('g4-choices');cdiv.innerHTML='';
-  sc.choices.forEach((c,i)=>{const btn=document.createElement('button');btn.textContent=c.label;btn.className='card';btn.onclick=()=>g4choose(i);cdiv.appendChild(btn);});
-}
-function g4choose(i){
-  const c=g4scenes[g4.scene].choices[i];
-  if(c.correct)g4.score++;
-  const feedDiv=document.createElement('div');feedDiv.className='muted';feedDiv.style.marginBottom='12px';feedDiv.textContent=c.feed;
-  const cdiv=document.getElementById('g4-choices');cdiv.innerHTML='';cdiv.appendChild(feedDiv);
-  const nextBtn=document.createElement('button');nextBtn.textContent='次へ →';nextBtn.className='back';
-  nextBtn.onclick=()=>{g4.scene++;if(g4.scene>=4){g4end();}else{renderG4();}};
-  cdiv.appendChild(nextBtn);
-}
-function g4end(){
-  document.getElementById('g4-choices').innerHTML='';
-  document.getElementById('g4-clues').style.display='none';
-  const res=document.getElementById('g4-result');res.style.display='block';
-  let txt='';
-  if(g4.score>=3){txt='【名探偵】あなたは4事件のうち'+g4.score+'件の黒幕を正しく特定した。高橋是清の「相場の異常は必ず誰かの利益になる」という直感は、現代の金融犯罪捜査にも通じる。';}
-  else if(g4.score>=2){txt='【優秀】'+g4.score+'件の黒幕を特定。情報の「動機」と「タイミング」を追う目は養われてきた。';}
-  else{txt='【要修行】'+g4.score+'件のみ正解。経済事件では「誰が得するか」より「いつ、どう動いたか」を追うことが重要だ。';}
-  document.getElementById('g4-result-text').textContent=txt;
-}
-
-/* Game 5: Alchemy Puzzle */
-let g5={demand:50,supply:50,price:50,turn:1,regime:'金本位制'};
-const g5materials=[
-  {name:'金',d:0,s:10,p:15,desc:'金本位制では強力だが、金がないと使えない'},
-  {name:'政府支出（債券）',d:15,s:5,p:-5,desc:'需要を刺激するが、財政圧力あり'},
-  {name:'銀行貸出（信用）',d:10,s:10,p:0,desc:'金本位制では弱いが、管理通貨制で強化'},
-  {name:'輸出促進',d:5,s:15,p:-5,desc:'供給力向上だが、為替リスクあり'},
-  {name:'労働力投入',d:0,s:20,p:5,desc:'生産能力を大きく向上'},
-  {name:'緊縮財政',d:-10,s:-5,p:15,desc:'物価安定だが、需要が落ちる'}
-];
-function initG5(){g5={demand:50,supply:50,price:50,turn:1,regime:'金本位制'};document.getElementById('g5-result').style.display='none';renderG5();}
-function renderG5(){
-  document.getElementById('g5-turn').textContent=g5.turn;
-  setBar('g5-demand',g5.demand);setBar('g5-supply',g5.supply);setBar('g5-price',g5.price);
-  document.getElementById('g5-demand').textContent=g5.demand;
-  document.getElementById('g5-supply').textContent=g5.supply;
-  document.getElementById('g5-price').textContent=g5.price;
-  document.getElementById('g5-regime').textContent='現在の制度：'+g5.regime+(g5.regime==='金本位制'?'（金がないと「金」カードが使えない）':'（信用だけで全てのカードが使える）');
-  const mdiv=document.getElementById('g5-materials');mdiv.innerHTML='';
-  g5materials.forEach((m,i)=>{
-    const disabled=(m.name==='金'&&g5.regime==='金本位制'&&g5.price<30);
-    const btn=document.createElement('button');
-    btn.style.cssText='padding:12px;border:1px solid #ddd;border-radius:10px;background:'+(disabled?'#f0f0f0':'#fff')+';cursor:'+(disabled?'not-allowed':'pointer')+';text-align:left;flex:1;min-width:140px;font-size:13px;';
-    btn.innerHTML='<div style="font-weight:500;margin-bottom:4px;">'+m.name+'</div><div style="font-size:11px;color:#888;margin-bottom:4px;">'+m.desc+'</div><div style="font-size:12px;">需要'+(m.d>=0?'+':'')+m.d+' 供給'+(m.s>=0?'+':'')+m.s+' 物価'+(m.p>=0?'+':'')+m.p+'</div>';
-    if(!disabled){btn.onclick=()=>g5use(i);}
-    mdiv.appendChild(btn);
-  });
-}
-function g5use(i){
-  const m=g5materials[i];
-  g5.demand=Math.max(0,Math.min(100,g5.demand+m.d));
-  g5.supply=Math.max(0,Math.min(100,g5.supply+m.s));
-  g5.price=Math.max(0,Math.min(100,g5.price+m.p));
-  g5.turn++;
-  if(g5.turn===3){
-    g5.regime='管理通貨制';
-    const notice=document.createElement('div');notice.className='notice';
-    notice.textContent='【制度変更】1931年、金輸出禁止が施行され、日本は管理通貨制に移行！「金」の制約が消え、「信用」だけで政策が動くようになった。';
-    const parent=document.getElementById('game5');parent.insertBefore(notice,document.getElementById('g5-materials'));
-    setTimeout(()=>{if(notice.parentNode)notice.parentNode.removeChild(notice);},4000);
-  }
-  if(g5.turn>5){g5end();}else{renderG5();}
-}
-function g5end(){
-  document.getElementById('g5-materials').innerHTML='';
-  const res=document.getElementById('g5-result');res.style.display='block';
-  let txt='';
-  const balance=Math.abs(g5.demand-g5.supply)+Math.abs(g5.price-50);
-  if(balance<30){txt='【繁栄】需要・供給・物価の三バランスが整った。高橋が目指した「円の錬金」は成功した。最終：需要'+g5.demand+' 供給'+g5.supply+' 物価'+g5.price;}
-  else if(balance<60){txt='【小康】一部の不均衡は残ったが、国家は破滅を回避した。さらなる政策調整が必要だ。最終：需要'+g5.demand+' 供給'+g5.supply+' 物価'+g5.price;}
-  else{txt='【混乱】三バランスが大きく崩れた。インフレかデフレか、どちらかの危機が深刻化している。最終：需要'+g5.demand+' 供給'+g5.supply+' 物価'+g5.price;}
-  document.getElementById('g5-result-text').textContent=txt;
-}
-</script>
+<script src="js/main.js" type="module"></script>
+<script src="js/game1.js" type="module"></script>
+<script src="js/game2.js" type="module"></script>
+<script src="js/game3.js" type="module"></script>
+<script src="js/game4.js" type="module"></script>
+<script src="js/game5.js" type="module"></script>
 </body>
 </html>
