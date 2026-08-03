@@ -1,6 +1,6 @@
 // Shared utility functions
 function hideAll() {
-  ['menu','game1','game2','game3','game4','game5'].forEach(id=>document.getElementById(id).style.display='none');
+  ['menu','game1','game2','game3','game4','game5','game6','game7'].forEach(id=>document.getElementById(id).style.display='none');
 }
 function show(id){
   document.getElementById(id).style.display='block';
@@ -17,6 +17,8 @@ function startGame(n){
   if(n===3) initG3();
   if(n===4) initG4();
   if(n===5) initG5();
+  if(n===6) initG6();
+  if(n===7) initG7();
 }
 function setBar(id,val){
   const el=document.getElementById(id+'-bar');
