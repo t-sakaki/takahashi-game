@@ -11,7 +11,7 @@
 
 <header>
   <h1>高橋是清 〜日本のケインズ〜</h1>
-  <p>経済と政治を学び、現代につなげる5つの体験</p>
+  <p>経済と政治を学び、現代につなげる7つの体験</p>
   <div id="lang-switch" style="margin:10px 0;">
     <label for="lang-select" class="visually-hidden">Language / 言語</label>
     <select id="lang-select" aria-label="Language selection">
@@ -47,11 +47,16 @@
       <div style="font-weight:500;margin-bottom:4px;">⑥ 現代の経済政策シミュレーション</div>
       <div style="font-size:13px;color:#666;">IMF視点を含む財政・金融政策選択</div>
     </button>
+    <button class="card" onclick="startGame(7)" aria-label="高市早苗政権経済シミュレーション: 防衛費・経済成長・財政のバランスを取るターンベースシミュレーション">
+      <div style="font-weight:500;margin-bottom:4px;">⑦ 高市早苗政権経済シミュレーション</div>
+      <div style="font-size:13px;color:#666;">防衛費・経済成長・財政のバランスを取る</div>
+    </button>
   </div>
 </nav>
 
 <main>
 
+<!-- Game 1 -->
 <div id="game1" class="game-panel" tabindex="-1" aria-labelledby="game1-title">
   <div class="game-header">
     <button class="back" onclick="backToMenu()" aria-label="メニューに戻る">← メニュー</button>
@@ -89,7 +94,8 @@
   </div>
 </div>
 
-<div id="game2" class="game-panel" tabindex="-1" aria-labelledby="game2-title">
+<!-- Game 2 -->
+<div id="game2 class="game-panel" class="game-panel" tabindex="-1" aria-labelledby="game2-title">
   <div class="game-header">
     <button class="back" onclick="backToMenu()" aria-label="メニューに戻る">← メニュー</button>
     <div class="meta">時刻 <span id="g2-time">4:30</span></div>
@@ -106,8 +112,8 @@
       <div style="font-size:20px;font-weight:500;" id="g2-shake">20</div>
     </div>
     <div class="panel">
-      <div style="font-size:12px;color:#888;">説得の糸口</div>
-      <div style="font-size:20px;font-weight:500;" id="g2-hope">10</div>
+      <div.style="font-size:12px;color:#888;">説得の糸口</div>
+      <div.style="font-size:20px;font-weight:500;" id="g2-hope">10</div>
     </div>
   </div>
   <div id="g2-scene" class="panel" style="font-size:14px;line-height:1.6;"></div>
@@ -123,6 +129,7 @@
   </div>
 </div>
 
+<!-- Game 3 -->
 <div id="game3" class="game-panel" tabindex="-1" aria-labelledby="game3-title">
   <div class="game-header">
     <button class="back" onclick="backToMenu()" aria-label="メニューに戻る">← メニュー</button>
@@ -140,8 +147,8 @@
       <div style="font-size:20px;font-weight:500;" id="g3-target">30</div>
     </div>
     <div class="panel">
-      <div style="font-size:12px;color:#888;">金保有量</div>
-      <div style="font-size:20px;font-weight:500;" id="g3-gold">3</div>
+      <div.style="font-size:12px;color:#888;">金保有量</div>
+      <div.style="font-size:20px;font-weight:500;" id="g3-gold">3</div>
     </div>
   </div>
   <div id="g3-era" class="muted" style="margin-bottom:16px;font-weight:500;"></div>
@@ -157,6 +164,7 @@
   </div>
 </div>
 
+<!-- Game 4 -->
 <div id="game4" class="game-panel" tabindex="-1" aria-labelledby="game4-title">
   <div class="game-header">
     <button class="back" onclick="backToMenu()" aria-label="メニューに戻る">← メニュー</button>
@@ -178,6 +186,7 @@
   </div>
 </div>
 
+<!-- Game 5 -->
 <div id="game5" class="game-panel" tabindex="-1" aria-labelledby="game5-title">
   <div class="game-header">
     <button class="back" onclick="backToMenu()" aria-label="メニューに戻る">← メニュー</button>
@@ -197,8 +206,8 @@
       <div class="gauge-bar"><div class="gauge-fill" id="g5-supply-bar"></div></div>
     </div>
     <div class="panel">
-      <div style="font-size:12px;color:#888;">物価安定</div>
-      <div style="font-size:20px;font-weight:500;" id="g5-price">50</div>
+      <div.style="font-size:12px;color:#888;">物価安定</div>
+      <div.style="font-size:20px;font-weight:500;" id="g5-price">50</div>
       <div class="gauge-bar"><div class="gauge-fill" id="g5-price-bar"></div></div>
     </div>
   </div>
@@ -216,7 +225,7 @@
   </div>
 </div>
 
-<!-- 新規ゲーム6: 現代の経済政策シミュレーション -->
+<!-- Game 6 -->
 <div id="game6" class="game-panel" tabindex="-1" aria-labelledby="game6-title">
   <div class="game-header">
     <button class="back" onclick="backToMenu()" aria-label="メニューに戻る">← メニュー</button>
@@ -236,8 +245,8 @@
       <div class="gauge-bar"><div class="gauge-fill" id="g6-fiscal-bar"></div></div>
     </div>
     <div class="panel">
-      <div style="font-size:12px;color:#888;">インフレ安定度</div>
-      <div style="font-size:20px;font-weight:500;" id="g6-inflation">50</div>
+      <div.style="font-size:12px;color:#888;">インフレ安定度</div>
+      <div.style="font-size:20px;font-weight:500;" id="g6-inflation">50</div>
       <div class="gauge-bar"><div class="gauge-fill" id="g6-inflation-bar"></div></div>
     </div>
   </div>
@@ -249,6 +258,44 @@
     <div class="muted" style="margin-bottom:12px;">
       <div style="font-weight:500;margin-bottom:4px;">現代へのレッスン（IMF視点も含む）</div>
       <p style="margin:0;">IMFは財政拡張と金融緩和のバランスを重視し、債務対GDP比が一定水準を超えると財政規律の強化を勧告する。同時に、デフレリスクがある場合は一時的な財政出金を容認するが、 exit strategy（出口戦略）を明確にすることを求める。本シミュレーションでは、こうした視点を得点に反映し、バランスの取れた政策選択が高評価となる。</p>
+    </div>
+    <button class="back" onclick="backToMenu()" aria-label="メニューに戻る">メニューへ</button>
+  </div>
+</div>
+
+<!-- Game 7 -->
+<div id="game7" class="game-panel" tabindex="-1" aria-labelledby="game7-title">
+  <div class="game-header">
+    <button class="back" onclick="backToMenu()" aria-label="メニューに戻る">← メニュー</button>
+    <div class="meta">ターン <span id="g7-turn">1</span>/5</div>
+  </div>
+  <h2 id="game7-title">高市早苗政権経済シミュレーション</h2>
+  <p>現代の日本における防衛費・経済成長・財政のバランスを取るターンベースシミュレーション。</p>
+  <div class="stats flex" style="margin-bottom:16px;">
+    <div class="panel">
+      <div style="font-size:12px;color:#888;">経済成長度</div>
+      <div style="font-size:20px;font-weight:500;" id="g7-econ">50</div>
+      <div class="gauge-bar"><div class="gauge-fill" id="g7-econ-bar"></div></div>
+    </div>
+    <div class="panel">
+      <div style="font-size:12px;color:#888;">防衛力強度</div>
+      <div style="font-size:20px;font-weight:500;" id="g7-def">50</div>
+      <div class="gauge-bar"><div class="gauge-fill" id="g7-def-bar"></div></div>
+    </div>
+    <div class="panel">
+      <div.style="font-size:12px;color:#888;">財政健全度（債務対GDP）</div>
+      <div.style="font-size:20px;font-weight:500;" id="g7-fiscal">50</div>
+      <div class="gauge-bar"><div class="gauge-fill" id="g7-fiscal-bar"></div></div>
+    </div>
+  </div>
+  <div id="g7-event" class="muted" style="margin-bottom:16px;"></div>
+  <div id="g7-choices" style="display:flex;flex-direction:column;gap:10px;"></div>
+  <div id="g7-result" class="result-box">
+    <h3>結果</h3>
+    <p id="g7-result-text" style="margin-bottom:12px;"></p>
+    <div class="muted" style="margin-bottom:12px;">
+      <div style="font-weight:500;margin-bottom:4px;">現代へのレッスン（IMF視点も含む）</div>
+      <p style="margin:0;">防衛費の増加は短期的には需要を喚起し景気を押し上げるが、中長期的には債務負担増と資源の奪い合いをもたらす。IMFは軍事支出の増加が財政持続可能性を圧迫するリスクを指摘し、成長志向の財政政策とのバランスを推奨する。また、過度な財政拡張はインフレリスクを高め、逆に過度な緊縮は潜在成長率の低下を招く。バランスの取れた政策選択が、持続可能な安全保障と経済発展の両立に不可欠である。</p>
     </div>
     <button class="back" onclick="backToMenu()" aria-label="メニューに戻る">メニューへ</button>
   </div>
@@ -267,6 +314,7 @@
 <script src="js/game4.js" type="module"></script>
 <script src="js/game5.js" type="module"></script>
 <script src="js/game6.js" type="module"></script>
+<script src="js/game7.js" type="module"></script>
 <script>
   // Simple language switch placeholder
   const select = document.getElementById('lang-select');
