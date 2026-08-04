@@ -44,6 +44,11 @@ function renderG4(){
   const sc=g4scenes[g4.scene];
   document.getElementById('g4-text').textContent=sc.text;
   document.getElementById('g4-clues').textContent='【手がかり】'+sc.clue;
+  if ('speechSynthesis' in window) {
+    const utter = new SpeechSynthesisUtterance(sc.text);
+    utter.lang = 'ja-JP';
+    window.speechSynthesis.speak(utter);
+  }
   const cdiv=document.getElementById('g4-choices');cdiv.innerHTML='';
   sc.choices.forEach((c,i)=>{const btn=document.createElement('button');btn.textContent=c.label;btn.className='card';btn.onclick=()=>g4choose(i);cdiv.appendChild(btn);});
 }

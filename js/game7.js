@@ -36,6 +36,11 @@ function renderG7(){
   document.getElementById('g7-fiscal').textContent=g7.fiscal;
   const ev=g7events[g7.turn-1];
   document.getElementById('g7-event').textContent=ev.text;
+  if ('speechSynthesis' in window) {
+    const utter = new SpeechSynthesisUtterance(ev.text);
+    utter.lang = 'ja-JP';
+    window.speechSynthesis.speak(utter);
+  }
   const cdiv=document.getElementById('g7-choices');cdiv.innerHTML='';
   ev.choices.forEach((c,i)=>{const btn=document.createElement('button');btn.textContent=c.label;btn.className='card';btn.onclick=()=>g7choose(i);cdiv.appendChild(btn);});
 }

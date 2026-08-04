@@ -74,6 +74,11 @@ function renderG1() {
   document.getElementById('g1-fiscal').textContent = g1.fiscal;
   const ev = g1events[g1.turn - 1];
   document.getElementById('g1-event').textContent = ev.text;
+  if ('speechSynthesis' in window) {
+    const utter = new SpeechSynthesisUtterance(ev.text);
+    utter.lang = 'ja-JP';
+    window.speechSynthesis.speak(utter);
+  }
   const cdiv = document.getElementById('g1-choices');
   cdiv.innerHTML = '';
   ev.choices.forEach((c, i) => {

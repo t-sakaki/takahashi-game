@@ -36,6 +36,11 @@ function renderG6(){
   document.getElementById('g6-inflation').textContent=g6.inflation;
   const ev=g6events[g6.turn-1];
   document.getElementById('g6-event').textContent=ev.text;
+  if ('speechSynthesis' in window) {
+    const utter = new SpeechSynthesisUtterance(ev.text);
+    utter.lang = 'ja-JP';
+    window.speechSynthesis.speak(utter);
+  }
   const cdiv=document.getElementById('g6-choices');cdiv.innerHTML='';
   ev.choices.forEach((c,i)=>{const btn=document.createElement('button');btn.textContent=c.label;btn.className='card';btn.onclick=()=>g6choose(i);cdiv.appendChild(btn);});
 }

@@ -34,6 +34,11 @@ function renderG2(){
   document.getElementById('g2-hope').textContent=g2.hope;
   const sc=g2scenes[g2.scene];
   document.getElementById('g2-scene').textContent=sc.text;
+  if ('speechSynthesis' in window) {
+    const utter = new SpeechSynthesisUtterance(sc.text);
+    utter.lang = 'ja-JP';
+    window.speechSynthesis.speak(utter);
+  }
   const cdiv=document.getElementById('g2-choices');cdiv.innerHTML='';
   sc.choices.forEach((c,i)=>{const btn=document.createElement('button');btn.textContent=c.label;btn.className='card';btn.onclick=()=>g2choose(i);cdiv.appendChild(btn);});
 }

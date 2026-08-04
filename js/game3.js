@@ -18,12 +18,17 @@ function renderG3(){
   document.getElementById('g3-gold').textContent=g3.gold;
   const era=g3eras[g3.round-1];
   document.getElementById('g3-era').textContent=era.name+'：'+era.text;
+  if ('speechSynthesis' in window) {
+    const utter = new SpeechSynthesisUtterance(era.name+'：'+era.text);
+    utter.lang = 'ja-JP';
+    window.speechSynthesis.speak(utter);
+  }
   const hdiv=document.getElementById('g3-hand');hdiv.innerHTML='';
-  g3.hand.forEach((c,i)=>{
+  g3.hand.forEach((c,i)=> {
     const disabled=(c.needGold&&g3.gold<=0&&g3.goldStandard);
     const btn=document.createElement('button');
     btn.style.cssText='padding:12px;border:1px solid #ddd;border-radius:10px;background:'+(disabled?'#f0f0f0':'#fff')+';cursor:'+(disabled?'not-allowed':'pointer')+';text-align:left;flex:1;min-width:120px;font-size:13px;';
-    btn.innerHTML='<div style="font-weight:500;margin-bottom:4px;">'+c.type+'</div><div style="font-size:20px;font-weight:500;margin-bottom:4px;">'+(c.val>0?'+':'')+c.val+'</div><div style="font-size:11px;color:#888;">'+c.desc+'</div>';
+    btn.innerHTML='<div style=\"font-weight:500;margin-bottom:4px;\">'+c.type+'</div><div style=\"font-size:20px;font-weight:500;margin-bottom:4px;\">'+(c.val>0?'+':'')+c.val+'</div><div style=\"font-size:11px;color:#888;\">'+c.desc+'</div>';
     if(!disabled){btn.onclick=()=>g3play(i);}
     hdiv.appendChild(btn);
   });
